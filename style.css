@@ -1,0 +1,856 @@
+@font-face {
+        font-family: 'Instrument Serif', serif;
+        src: url(./GT-America-Compressed-Bold\ \(1\).woff2);
+}
+
+*::selection {
+        color: #fff;
+        background-color: black;
+}
+
+
+* {
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+}
+
+html,
+body {
+        width: 100vw;
+        height: auto;
+        overflow-x: hidden;
+        background-color:  rgb(34, 21, 8);
+}
+
+#menu {
+        cursor: grab;
+        position: fixed;
+        height: 10vh; 
+        width: 100vw;
+        z-index: 99999;
+        overflow-x: hidden;
+        background-color:transparent;
+        transition:cubic-bezier(0.19, 1, 0.22, 1);
+        
+}
+
+#menu>h1 {
+        color: rgb(34, 21, 8);
+        padding: 20px;
+        font-size: 19px;
+        font-family: 'Instrument Serif', serif;
+        margin-top: 20px;
+        margin-left: 25px;
+        /* background-color: aquamarine; */
+
+
+}
+#h2>h2:hover{
+        color:red;
+        transition: all ease-in 0.5s;
+        /* scale: 1.1;
+        background-color: #c5c0c07e;
+        border-radius: 50px;
+        padding: 2px 15px; */
+}
+#menu>h1:hover{
+        color:red;
+        transition: all ease-in 0.5s;
+       
+}
+#h2 {
+        /* background-color: aquamarine; */
+        color: rgb(34, 21, 8);
+        font-family: 'Bandeins Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: -1;
+        display: flex;
+        justify-content: end;
+        flex-direction: row;
+        gap: 60px;
+        align-items: top;
+        text-decoration: none;
+        margin-top: -40px;
+        margin-right: 30px;
+}
+
+#h2 span {
+        position: absolute;
+        font-size: 14px;
+        margin-bottom: 15px;
+        padding: 2px;
+        top: 45%;
+}
+
+#main {
+        clip-path: polygon(1% 0, 15% 0, 29% 0, 45% 0, 54% 0, 72% 0, 98% 0, 97% 15%, 97% 27%, 98% 36%, 99% 44%, 98% 57%, 98% 71%, 98% 88%, 100% 100%, 86% 99%, 76% 100%, 45% 100%, 31% 99%, 0 100%, 3% 90%, 0% 79%, 2% 67%, 1% 56%, 1% 40%, 2% 30%, 1% 19%, 2% 13%);
+        position: relative;
+        background-color: #fff;
+        width: 100%;
+      
+
+}
+#scroll{
+        position: absolute;
+        top:20%;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color:transparent;
+        z-index: 9999;
+        transition: all ease 0.2s;
+        opacity: 0;
+}
+
+#page1 {
+        cursor: none;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        /* background-color: rgba(241, 245, 245, 0.788); */
+        z-index: 999999;
+
+}
+
+#blurimg {
+        display: flex;
+        width: 600px;
+        height: 800px;
+        justify-content: center;
+}
+
+#blurimg>img {
+
+        clip-path: polygon(0% 98%, 3% 100%, 12% 100%, 16% 99%, 22% 99%, 29% 100%, 37% 98%, 48% 98%, 56% 100%, 69% 98%, 75% 100%, 84% 99%, 92% 99%, 98% 99%, 100% 94%, 100% 88%, 99% 85%, 100% 78%, 99% 73%, 100% 67%, 98% 61%, 99% 54%, 98% 46%, 99% 37%, 97% 29%, 100% 18%, 99% 5%, 95% 0%, 86% 1%, 79% 0%, 68% 0%, 64% 4%, 58% 0%, 51% 1%, 46% 3%, 37% 1%, 29% 0%, 17% 1%, 13% 0%, 6% 0%, 1% 0%, 0% 4%, 0% 13%, 1% 20%, 1% 27%, 0% 33%, 0% 44%, 1% 53%, 0% 63%, 1% 69%, 0% 79%, 2% 83%, 0% 90%);
+        max-width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+        object-position: center;
+        object-fit: contain;
+        margin-left: 135%;
+        margin-top: 20%;
+        z-index: 9;
+        filter:blur(1.8px);
+       
+}
+
+#movtxt1>h1{
+        position: relative;  
+        font-family: 'Merriweather', serif;
+        color: #010101;
+        font-size: 16vw;
+        text-transform: uppercase;
+        letter-spacing: 1vw;
+        font-weight: 400;
+}
+#movtxt2>h1{
+        position: relative;
+        display: flex;
+        overflow-x:hidden ;
+        flex-direction:row;
+        font-family: 'Merriweather', serif;
+        font-size: 16vw;
+        -webkit-text-stroke-color: black;
+        -webkit-text-stroke-width: 1px; 
+        text-transform: uppercase;
+        letter-spacing: -0.5vw;
+        color: #fff;
+        font-weight: 400;
+        
+}
+#movtxt1{
+        opacity: 1;
+      
+       
+        rotate: -8deg; 
+        position: absolute;
+        overflow-x: auto;
+        overflow-y: hidden;
+        color:rgb(34,21,8);
+        top: 35%;
+        left:-45%;
+        display: inline-block;
+        white-space: nowrap;
+        text-align: center;
+        transition: opacity ease 0.1s;
+        animation-name: move-txt;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+}
+
+#movtxt2{
+        opacity: 1;
+        position: absolute;
+        left:-45%;        
+        mix-blend-mode: difference;
+        z-index: 99;
+        top: 40%;
+        rotate: 8deg; 
+        white-space: nowrap;
+        text-align: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        transition: opacity ease 0.1s;
+        animation-name: move-txt2;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+}
+
+@keyframes move-txt {
+        0% {
+                transform: translateX(0);
+        }
+        50%{
+                transform: translateX(-50%);
+                               
+        }
+
+        100% {
+                transform: translateX(-100%);
+        }
+}
+
+@keyframes move-txt2 {
+        0% {
+                transform: translateX(0);
+        }
+        50%{
+                transform: translateX(50%);
+                               
+        }
+        75%{
+                transform: translateX(75%);
+                               
+        }
+
+        100% {
+                transform: translateX(100%);
+        }
+} 
+
+#page1>h2 {
+        position: absolute;
+        top: 92vh;
+        left: 4%;
+        font-weight: 550;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-family: 'Bandeins Sans', sans-serif;
+        color: rgba(113, 112, 111, 0.726);
+}
+
+#page1>h3 {
+        position: absolute;
+        top: 90vh;
+        left: 89%;
+        font-weight: 550;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-family: 'Bandeins Sans', sans-serif;
+        color: rgba(113, 112, 111, 0.726);
+}
+
+#page2 {
+        cursor: none;
+        position: relative;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100vh;
+        /* background-color:rgba(241, 245, 245, 0.788); */
+}
+
+#page2>h1 {
+        position: absolute;
+        width: 100%;
+        scale: 1.5;
+        top: 30%;
+        font-family: 'Instrument Serif', serif;
+        color: rgb(34, 21, 8);
+        font-size: 18vw;
+        text-transform: uppercase;
+        letter-spacing: -1vw;
+        line-height: 22vh;
+        font-weight: 400;
+        mix-blend-mode: multiply;
+        z-index: 999;
+        text-align: center;
+        mix-blend-mode:luminosity;
+        opacity: 0;
+}
+
+#page2>h2 {
+        position: absolute;
+        top: 50%;
+        left: 3%;       
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+
+#page2>h3 {
+        writing-mode: vertical-rl;
+        position: absolute;
+        display: flex;
+        text-orientation: upright;
+        top: 50%;
+        left: 95%;
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+#overlay{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+}
+#scroll2{
+        position: absolute;
+        top:20%;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color:transparent;
+        z-index: 999;
+        transition: all ease 0.2s;
+        /* opacity: 0; */
+
+}
+#nav2{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 190px;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 10vh;
+        bottom: 0;
+        text-transform: uppercase;       
+}
+#nav2>h1 {
+        font-family: gilroy;
+        padding-top: 20px;
+        color: rgb(34, 21, 8);
+        font-size: 15px;
+}
+#nav2>h1>span{
+        color: rgba(72, 71, 70, 0.879);
+        padding-right: 10px;
+}
+#img2{
+        position: absolute;
+        transition: all linear 0.2s;
+        left: -10%;
+        transform:translate(-50%,-50%) rotate(50deg);
+        /* transition:all linear cubic-bezier(0.19, 1, 0.22, 1) ; */
+        display: flex;
+        top: -160%;
+        margin-top: -10%;
+        width: 350px;
+        height: 500px;
+        justify-content: center;
+        background-color: rgb(70, 154, 154);
+        clip-path: polygon(0% 98%, 3% 100%, 12% 100%, 16% 99%, 22% 99%, 29% 100%, 37% 98%, 48% 98%, 56% 100%, 69% 98%, 75% 100%, 84% 99%, 92% 99%, 98% 99%, 100% 94%, 100% 88%, 99% 85%, 100% 78%, 99% 73%, 100% 67%, 98% 61%, 99% 54%, 98% 46%, 99% 37%, 97% 29%, 100% 18%, 99% 5%, 95% 0%, 86% 1%, 79% 0%, 68% 0%, 64% 4%, 58% 0%, 51% 1%, 46% 3%, 37% 1%, 29% 0%, 17% 1%, 13% 0%, 6% 0%, 1% 0%, 0% 4%, 0% 13%, 1% 20%, 1% 27%, 0% 33%, 0% 44%, 1% 53%, 0% 63%, 1% 69%, 0% 79%, 2% 83%, 0% 90%);
+       
+}
+#page3{
+        cursor: none;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        /* background-color: rgba(241, 245, 245, 0.788); */
+}
+#page3>h1 {
+        position: absolute;
+        width: 100%;
+        scale: 1.5;
+        top: 30%;
+        font-family: 'Instrument Serif', serif;
+        color: rgb(34, 21, 8);
+        font-size: 18vw;
+        text-transform: uppercase;
+        letter-spacing: -1vw;
+        line-height: 22vh;
+        font-weight: 400;
+        mix-blend-mode:luminosity;
+        z-index: 999;
+        text-align: center;
+        opacity: 0;
+      
+}
+
+#page3>h2 {
+        position: absolute;
+        top: 50%;
+        left: 3%;
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+
+#page3>h3 {
+        writing-mode: vertical-rl;
+        position: absolute;
+        display: flex;
+        text-orientation: upright;
+
+        top: 50%;
+        left: 95%;
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+#scroll3{
+        position: absolute;
+        top:20%;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color:transparent;
+        z-index: 999;
+        transition: all ease 0.2s;
+        opacity: 0;
+
+}
+#nav2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 190px;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 10vh;
+        bottom: 0;
+        text-transform: uppercase;       
+}
+#nav2>h1 {
+        font-family: gilroy;
+        padding-top: 20px;
+        color: rgb(34, 21, 8);
+        font-size: 15px;
+}
+#nav2>h1>span{
+        color: rgba(72, 71, 70, 0.879);
+        padding-right: 10px;
+}
+#img3{
+        position: absolute;
+        transition: all linear 0.2s;
+        left: -10%;
+        transform:translate(-50%,-50%) rotate(50deg);
+        /* transition:all linear cubic-bezier(0.19, 1, 0.22, 1) ; */
+        display: flex;
+        top: -160%;
+        margin-top: -10%;
+        width: 350px;
+        height: 500px;
+        justify-content: center;
+        background-color: rgb(70, 154, 154);
+        clip-path: polygon(0% 98%, 3% 100%, 12% 100%, 16% 99%, 22% 99%, 29% 100%, 37% 98%, 48% 98%, 56% 100%, 69% 98%, 75% 100%, 84% 99%, 92% 99%, 98% 99%, 100% 94%, 100% 88%, 99% 85%, 100% 78%, 99% 73%, 100% 67%, 98% 61%, 99% 54%, 98% 46%, 99% 37%, 97% 29%, 100% 18%, 99% 5%, 95% 0%, 86% 1%, 79% 0%, 68% 0%, 64% 4%, 58% 0%, 51% 1%, 46% 3%, 37% 1%, 29% 0%, 17% 1%, 13% 0%, 6% 0%, 1% 0%, 0% 4%, 0% 13%, 1% 20%, 1% 27%, 0% 33%, 0% 44%, 1% 53%, 0% 63%, 1% 69%, 0% 79%, 2% 83%, 0% 90%);
+       
+}
+#page4{
+        position: relative;
+        cursor: none;
+        width: 100%;
+        height: 100vh;
+        /* background-color: rgba(241, 245, 245, 0.788); */
+}
+#overlay4{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+}#page4>h1 {
+        position: absolute;
+        width: 100%;
+        scale: 1.5;
+        top: 30%;
+        font-family: 'Instrument Serif', serif;
+        color: rgb(34, 21, 8);
+        font-size: 18vw;
+        text-transform: uppercase;
+        letter-spacing: -1vw;
+        line-height: 22vh;
+        font-weight: 400;
+        mix-blend-mode:luminosity;
+        z-index: 999;
+        text-align: center;
+        opacity: 0;
+}
+
+#page4>h2 {
+        position: absolute;
+        top: 50%;
+        left: 3%;
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+#scroll4{
+        position: absolute;
+        top:20%;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color:transparent;
+        z-index: 9999;
+        transition: all ease 0.2s;
+        opacity: 0;
+}
+
+
+#page4>h3 {
+        writing-mode: vertical-rl;
+        position: absolute;
+        display: flex;
+        text-orientation: upright;
+
+        top: 50%;
+        left: 95%;
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+#nav2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 190px;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 10vh;
+        bottom: 0;
+        text-transform: uppercase;       
+}
+#nav2>h1 {
+        font-family: gilroy;
+        padding-top: 20px;
+        color: rgb(34, 21, 8);
+        font-size: 15px;
+}
+#nav2>h1>span{
+        color: rgba(72, 71, 70, 0.879);
+        padding-right: 10px;
+}
+#img4{
+        position: absolute;
+        transition: all linear 0.2s;
+        left: -10%;
+        transform:translate(-50%,-50%) rotate(50deg);
+        /* transition:all linear cubic-bezier(0.19, 1, 0.22, 1) ; */
+        display: flex;
+        top: -160%;
+        margin-top: -10%;
+        width: 350px;
+        height: 500px;
+        justify-content: center;
+        background-color: rgb(70, 154, 154);
+        clip-path: polygon(0% 98%, 3% 100%, 12% 100%, 16% 99%, 22% 99%, 29% 100%, 37% 98%, 48% 98%, 56% 100%, 69% 98%, 75% 100%, 84% 99%, 92% 99%, 98% 99%, 100% 94%, 100% 88%, 99% 85%, 100% 78%, 99% 73%, 100% 67%, 98% 61%, 99% 54%, 98% 46%, 99% 37%, 97% 29%, 100% 18%, 99% 5%, 95% 0%, 86% 1%, 79% 0%, 68% 0%, 64% 4%, 58% 0%, 51% 1%, 46% 3%, 37% 1%, 29% 0%, 17% 1%, 13% 0%, 6% 0%, 1% 0%, 0% 4%, 0% 13%, 1% 20%, 1% 27%, 0% 33%, 0% 44%, 1% 53%, 0% 63%, 1% 69%, 0% 79%, 2% 83%, 0% 90%);
+       
+}
+#page5{
+        position: relative;
+        cursor: none;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+}
+#overlay5{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+}#page5>h1 {
+        position: absolute;
+        width: 100%;
+        scale: 1.5;
+        top: 30%;
+        font-family: 'Instrument Serif', serif;
+        color: rgb(34, 21, 8);
+        font-size: 18vw;
+        text-transform: uppercase;
+        letter-spacing: -1vw;
+        line-height: 22vh;
+        font-weight: 400;
+        mix-blend-mode:luminosity;
+        z-index: 999;
+        text-align: center;
+        opacity: 0;
+}
+
+#page5>h2 {
+        position: absolute;
+        top: 50%;
+        left: 3%;
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+
+#page5>h3 {
+        writing-mode: vertical-rl;
+        position: absolute;
+        display: flex;
+        text-orientation: upright;
+
+        top: 50%;
+        left: 95%;
+        font-family: gilroy;
+        color: rgba(72, 71, 70, 0.879);
+        font-size: 14px;
+        font-weight: 600;
+        flex-direction: column;
+        letter-spacing: 5px;
+}
+#nav2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 190px;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 10vh;
+        bottom: 0;
+        text-transform: uppercase;       
+}
+#nav2>h1 {
+        font-family: gilroy;
+        padding-top: 20px;
+        color: rgb(34, 21, 8);
+        font-size: 15px;
+        
+}
+#nav2>h1>span{
+        color: rgba(72, 71, 70, 0.879);
+        padding-right:  0px;
+}
+#img5{
+        position: absolute;
+        transition: all linear 0.2s;
+        left: -10%;
+        transform:translate(-50%,-50%) rotate(50deg);
+       
+        display: flex;
+        top: -160%;
+        margin-top: -10%;
+        width: 350px;
+        height: 500px;
+        justify-content: center;
+        background-color: rgb(70, 154, 154);
+        clip-path: polygon(0% 98%, 3% 100%, 12% 100%, 16% 99%, 22% 99%, 29% 100%, 37% 98%, 48% 98%, 56% 100%, 69% 98%, 75% 100%, 84% 99%, 92% 99%, 98% 99%, 100% 94%, 100% 88%, 99% 85%, 100% 78%, 99% 73%, 100% 67%, 98% 61%, 99% 54%, 98% 46%, 99% 37%, 97% 29%, 100% 18%, 99% 5%, 95% 0%, 86% 1%, 79% 0%, 68% 0%, 64% 4%, 58% 0%, 51% 1%, 46% 3%, 37% 1%, 29% 0%, 17% 1%, 13% 0%, 6% 0%, 1% 0%, 0% 4%, 0% 13%, 1% 20%, 1% 27%, 0% 33%, 0% 44%, 1% 53%, 0% 63%, 1% 69%, 0% 79%, 2% 83%, 0% 90%);
+       
+}
+#scroll5{
+        position: absolute;
+        top:20%;
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color:transparent;
+        z-index: 9999;
+        transition: all ease 0.2s;
+        opacity: 0;
+}
+#page6{
+        position: relative;
+        width: 100%;
+        min-height: 270vh;
+        cursor:crosshair;
+        
+}
+#elem1{
+        text-align: left;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding:  20px 40px;      
+        font-family: 'Instrument Serif', serif;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        border-top: 1px solid black;
+        margin-left: 40px;
+        margin-right: 60px;
+        color: rgba(72, 71, 70, 0.879);
+        align-content: center;
+        transition: cubic-bezier(0.19, 1, 0.22, 1);
+        
+}
+#elem1>h1{
+        position:absolute;
+        
+        left: 5%;
+        padding-top: -5px;
+        font-size: 27px;
+        color: rgba(72, 71, 70, 0.879);
+        -webkit-text-stroke-width: 2px solid rgba(241, 245, 245, 0.788);
+        text-align:left;
+        text-transform: capitalize;
+       } 
+        
+#elem1>h2{
+         position:relative;
+        left: 35%;
+        font-family:gilroy ;
+       padding-top: 10px;
+       font-size: 15px;
+       font-weight: 500;
+       text-transform: uppercase;
+       color: rgb(34, 21, 8);
+       padding-top: 10px;
+       text-align:left;
+}
+#elem1>h3{
+        position: relative;
+        left: 16%;
+        padding-top: 5px;
+        text-align: left;
+        text-transform: capitalize;
+
+} 
+ 
+#elem1>h4{
+        padding-top: 10px;
+        color: rgb(34, 21, 8);
+        text-align:left;
+} 
+#elem1:nth-last-child(1) {
+        border-bottom: 1px solid #030303c1;
+}
+#page6>img{
+        position: absolute;
+        width: 150px;
+        height: 200px;
+        opacity: 0;
+}
+#last{
+        position: relative;
+        transition: cubic-bezier(0.19, 1, 0.22, 1);
+        width: 100%;
+        height: 100vh;
+        bottom: 0;
+} 
+#last>p{
+        font-size: 48px;
+        position: absolute;
+        font-family: 'Instrument Serif', serif;
+        width: 40%;
+        left: 7%;
+        top: 20%;
+        text-transform: capitalize;
+        border: 1px solid#000;
+        padding: 30px;
+}
+#last>p>span{
+        color: grey;
+}
+.top{
+        position: absolute;
+        top: 20%;
+        right: 12%;
+}
+.top>h1{
+        font-size: 13px;
+        color:grey;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 2.5px;
+        font-weight: 450;
+}
+.top>h2{
+        font-size: 33px;
+        color:rgb(8, 8, 8);
+        font-family: 'Instrument Serif', serif;
+        text-transform: capitalize;
+        padding-top: 30px;
+}
+.bottum{
+        position: absolute;
+         top: 35%;
+        right: 22%;
+}
+.bottum>h1{
+        font-size: 13px;
+        color:grey;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 2.5px;
+        font-weight: 450;
+}
+#last>p:hover{
+        background-color: #000;
+        color: #ffffff;
+        transition: cubic-bezier(0.19, 1, 0.22, 1).2s;
+       
+}
+.bottum>h2{
+        font-size: 33px;
+        letter-spacing: 4px;
+        word-spacing: 5.5px;
+        color:rgb(8, 8, 8);
+        font-family: 'Instrument Serif', serif;
+        text-transform: capitalize;
+        padding-top: 30px;
+}
+#last>h3{
+        position: absolute;
+        font-size: 13px;
+        color:grey;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 2.5px;
+        font-weight: 550;
+        top:97%;
+        left: 07%;
+
+}
